@@ -11,18 +11,18 @@ The purpose of writting this code was to learn the fundamentals about on-chain t
 ## Structure of the main go file
 
 The main go file is structured into three parts:
-*Part One* : 
-1. Use custom on-chain contract to gather pool data for Uniswap V2 (tokens, pool address, etc). I added UniswapV3 data by hand given there are so few pools.
-2. This section also finds all loops (of length 2 and 3) that start and end in the same asset across these set of pools.
-3. I perform some basic filtering to the pools, eg if they have less than 1 WETH.
+**Part One**: 
+Use custom on-chain contract to gather pool data for Uniswap V2 (tokens, pool address, etc). I added UniswapV3 data by hand given there are so few pools.
+This section also finds all loops (of length 2 and 3) that start and end in the same asset across these set of pools.
+I perform some basic filtering to the pools, eg if they have less than 1 WETH.
  
-*Part Two* : 
+**Part Two** : 
 This section calculates the profit along any path.
 For UniswapV2, we can calculate the price impact (up to slippage) of each pool by simply knowing the reseves. So we update the reserves by batching queries to an on-chain contract.
 For UniswapV3, the mechanics are very different (given multiple ticks), meaning to calculate the price impact (up to slippage) we would need to know the liquidity for the range of ticks we would cross by trading assets. A simple (and slow) method is to query the Uniswapv3 quoter function. A better way would be to run your own node and query the liquidity and caluclate the price impact directly.
 We end this section by selecting the most profitable arbitrage path.
 
-*Part Three*: 
+**Part Three**: 
 This section take our proiftable arbitrage trade, and creates a transaction with some nice features by using a custom execution contract.
 The nice features are that it reverts if it's not profitable, etc.
 We then create a flashbots bundle and submit it to the flashbots relay.
