@@ -1,0 +1,20 @@
+
+    Flashbot based packages and links
+
+https://github.com/lmittmann/flashbots
+
+https://pkg.go.dev/github.com/cryptoriums/flashbot
+
+https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint#eth_sendbundle
+
+
+
+    Go packages
+
+common
+core
+types
+hexutils
+crypto
+
+
