@@ -1,5 +1,5 @@
 ## Go Go Uni Dex Bot
-This code finds and trades profitable closed-loop arbitrage paths of length 2 and 3 between any set of pools in UniswapV2 (including forks) and UniswapV3.
+This code finds and trades profitable closed-loop atomic arbitrage paths of length 2 and 3 between any set of pools in UniswapV2 (including forks) and UniswapV3.
 
 While the current state of this code is not meaningfully profitable, it provided me with an exellent opportunity to learn Go, Solidity, and how Ethereum works at a deeper level. In that sense I consider it a success. It was also a lot of fun to build! :)
 
