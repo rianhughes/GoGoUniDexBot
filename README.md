@@ -11,6 +11,7 @@ The purpose of writting this code was to learn the fundamentals about on-chain t
 ## Structure of the main go file
 
 The main go file is structured into three parts:
+
 **Part One**: 
 Use custom on-chain contract to gather pool data for Uniswap V2 (tokens, pool address, etc). I added UniswapV3 data by hand given there are so few pools.
 This section also finds all loops (of length 2 and 3) that start and end in the same asset across these set of pools.
